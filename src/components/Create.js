@@ -2,6 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 function Create() {
+
+    const inputTextHandler = (e) => {
+        console.log(e.target.value);
+    }
     return (
         <Container>
                 <Title> CREATE </Title>
@@ -9,13 +13,13 @@ function Create() {
             <Todos>
                 <Form> 
                     <InputLabel> Titulo </InputLabel>
-                        <InputField></InputField>
+                        <InputField onChange={inputTextHandler}></InputField>
                         <InputLabel> Tags </InputLabel>
-                    <InputField></InputField>
+                    <InputField onChange={inputTextHandler}></InputField>
                 </Form>
                     <Description>
                     <InputLabel> Descripción </InputLabel>
-                        <TextArea />
+                        <TextArea onChange={inputTextHandler}/>
                     <Button>Enviar</Button>
                     </Description>
                 </Todos>
@@ -28,12 +32,11 @@ function Create() {
 export default Create
 
 const Container = styled.div `
-    width: 60%; 
+    width: 900px; 
     margin: 0 auto;
     background: #227093;
     color: #ffffff;
-    
-
+    box-shadow: 0 0px 15px -8px black; 
 `
 const Title = styled.p `
     padding: 14px 32px;

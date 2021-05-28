@@ -31,4 +31,3 @@ const Title = styled.h1 `
     color: #ffffff;
     font-weight: 500;
 `
-
