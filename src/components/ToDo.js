@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Tasks from './Tasks'
 
-function ToDo() {
+function ToDo( {todos} ) {
+    console.log(todos)
     return (
         <Container>
             <Title> TO-DO </Title>
             <Line/>
-            <Tasks />
-            <Tasks />
+            {todos.map((todo) => (
+                <Tasks text={todo.text} />
+            ))}
         </Container>
     )
 }
@@ -20,6 +22,7 @@ const Container = styled.div `
     background: #227093;
     color: #ffffff;
     marign: 1rem;
+    width:400px;
     
 `
 const Title = styled.p `

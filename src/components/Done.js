@@ -7,8 +7,6 @@ function Done() {
         <Container>
             <Title> Done </Title>
             <Line/>
-            <Tasks />
-            <Tasks />
         </Container>
     )
 }
@@ -19,6 +17,7 @@ const Container = styled.div`
     margin: 0 auto;
     background: #227093;
     color: #ffffff;
+    width: 400px;
 `
 const Title = styled.p `
     padding: 14px 32px;

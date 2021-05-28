@@ -1,11 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Create() {
+function Create( {setInputText, todos, setTodos, inputText} ) {
 
     const inputTextHandler = (e) => {
         console.log(e.target.value);
-    }
+        setInputText(e.target.value);
+    };
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([
+            ...todos,
+            { text: inputText, completed: false, id: Math.random() * 1000},
+        ]);
+        setInputText("");
+    };
     return (
         <Container>
                 <Title> CREATE </Title>
@@ -13,14 +22,14 @@ function Create() {
             <Todos>
                 <Form> 
                     <InputLabel> Titulo </InputLabel>
-                        <InputField onChange={inputTextHandler}></InputField>
+                        <InputField value={inputText} onChange={inputTextHandler}></InputField>
                         <InputLabel> Tags </InputLabel>
                     <InputField onChange={inputTextHandler}></InputField>
                 </Form>
                     <Description>
                     <InputLabel> Descripción </InputLabel>
                         <TextArea onChange={inputTextHandler}/>
-                    <Button>Enviar</Button>
+                    <Button onClick={submitTodoHandler}>Enviar</Button>
                     </Description>
                 </Todos>
 

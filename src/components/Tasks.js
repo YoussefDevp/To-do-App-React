@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Tasks() {
+function Tasks({text}) {
     return (
         <Container>
-            <Title> CREATE </Title>
+            <Title> {text} </Title>
             <Line/>
             <Task>
             <Tags>urgent</Tags>
